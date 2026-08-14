@@ -1,0 +1,161 @@
+/* ==========================================================================
+   TRUSTIV — Design tokens (Warm & Vibrant direction)
+   Palette: coral, sunflower, violet, mint on warm white, grounded by deep indigo-ink.
+   Type: Space Grotesk (display) / Plus Jakarta Sans (body) / Space Mono (utility).
+   ========================================================================== */
+
+:root {
+    --ink: #171533;
+    --ink-2: #211D45;
+    --paper: #FFFDF9;
+    --paper-2: #FFFFFF;
+    --coral: #FF5C72;
+    --coral-deep: #E8425A;
+    --sun: #FFC845;
+    --sun-deep: #F2A900;
+    --violet: #5B4FE9;
+    --violet-deep: #4436C4;
+    --mint: #1FC8A3;
+    --mint-deep: #12A483;
+    --tint-violet: #EFECFE;
+    --tint-sun: #FFF3D6;
+    --tint-mint: #DEF9F1;
+    --tint-coral: #FFE7EA;
+    --ink-text: #171533;
+    --ink-text-60: rgba(23, 21, 51, 0.64);
+    --ink-text-40: rgba(23, 21, 51, 0.44);
+    --paper-text: #FFFDF9;
+    --paper-text-70: rgba(255, 253, 249, 0.76);
+    --paper-text-45: rgba(255, 253, 249, 0.5);
+    --line: rgba(23, 21, 51, 0.12);
+    --line-dark: rgba(255, 253, 249, 0.18);
+    --shadow-soft: 0 20px 40px -18px rgba(23, 21, 51, 0.28);
+    --shadow-pop: 0 14px 0 0 var(--ink);
+    --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
+    --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'Space Mono', 'SFMono-Regular', Menlo, monospace;
+    --max-w: 1180px;
+    --pad: clamp(20px, 5vw, 64px);
+    --r-lg: 22px;
+    --r-md: 14px;
+    --r-pill: 999px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    color: var(--ink-text);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    font-size: 16px;
+    line-height: 1.55;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+}
+
+p {
+    margin: 0;
+}
+
+button {
+    font-family: inherit;
+}
+
+:focus-visible {
+    outline: 3px solid var(--violet);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+.container {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding-left: var(--pad);
+    padding-right: var(--pad);
+}
+
+.eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--violet-deep);
+    font-weight: 700;
+    background: var(--tint-violet);
+    padding: 6px 12px 6px 10px;
+    border-radius: var(--r-pill);
+}
+
+.eyebrow::before {
+    content: "●";
+    color: var(--coral);
+    font-size: 8px;
+}
+
+.section-on-dark .eyebrow,
+.page-header .eyebrow {
+    background: rgba(255, 253, 249, 0.14);
+    color: var(--sun);
+}
+
+.hero .eyebrow {
+    background: var(--ink);
+    color: var(--sun);
+    position: relative;
+    z-index: 2;
+}
+
+.section-on-dark .eyebrow::before,
+.hero .eyebrow::before,
+.page-header .eyebrow::before {
+    color: var(--coral);
+}
+
+
+/* ==========================================================================
