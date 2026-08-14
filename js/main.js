@@ -88,3 +88,68 @@ document.addEventListener('DOMContentLoaded', function () {
       var wasOpen = item.classList.contains('is-open');
       document.querySelectorAll('.faq-item.is-open').forEach(function (o) {
         o.classList.remove('is-open');
+      });
+      if (!wasOpen) item.classList.add('is-open');
+    });
+  });
+
+  // Contact form: sends the submission by email via Web3Forms
+  var form = document.querySelector('.js-contact-form');
+  if (form) {
+    var success = form.querySelector('.form-success');
+    var submitBtn = form.querySelector('button[type="submit"]');
+    var errorBox = form.querySelector('.form-error');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      if (errorBox) errorBox.classList.remove('is-visible');
+      if (success) success.classList.remove('is-visible');
+
+      var accessKey = form.querySelector('input[name="access_key"]');
+      if (!accessKey || !accessKey.value || accessKey.value === 'YOUR_ACCESS_KEY_HERE') {
+        if (errorBox) {
+          errorBox.textContent = 'Form is not fully set up yet — add your Web3Forms access key in contact.html.';
+          errorBox.classList.add('is-visible');
+        }
+        return;
+      }
+
+      var originalBtnText = submitBtn ? submitBtn.textContent : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+      }
+
+      var formData = new FormData(form);
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: formData
+      })
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          if (data.success) {
+            if (success) success.classList.add('is-visible');
+            form.reset();
+          } else {
+            throw new Error(data.message || 'Submission failed');
+          }
+        })
+        .catch(function () {
+          if (errorBox) {
+            errorBox.textContent = "Something went wrong. Please try again, or email us directly at hello@trustivservices.com.";
+            errorBox.classList.add('is-visible');
+          }
+        })
+        .finally(function () {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnText;
+          }
+        });
+    });
+  }
+
+});
