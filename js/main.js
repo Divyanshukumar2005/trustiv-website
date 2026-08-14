@@ -76,3 +76,15 @@ document.addEventListener('DOMContentLoaded', function () {
             overlay.classList.add('is-open');
           });
         }
+      });
+    });
+  }
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(function (item) {
+    var q = item.querySelector('.faq-q');
+    if (!q) return;
+    q.addEventListener('click', function () {
+      var wasOpen = item.classList.contains('is-open');
+      document.querySelectorAll('.faq-item.is-open').forEach(function (o) {
+        o.classList.remove('is-open');
