@@ -30,3 +30,14 @@ A fully static, hand-built site — no build tools, no frameworks, no backend. J
     ├── og-image.jpg        # Open Graph / social share image
     └── clients/            # Client/partner logos
 ```
+
+## ✨ Features
+
+- Fully responsive, mobile-first layout
+- Custom design system defined via CSS variables (see top of `css/styles.css`)
+- Mobile nav toggle
+- Auto-looping logo/testimonial marquee
+- Testimonials with a "Read more" modal for long quotes
+- FAQ accordion
+- Contact form powered by [Web3Forms](https://web3forms.com/) (no backend required — submissions are emailed directly)
+- SEO basics: sitemap, robots.txt, Open Graph tags, JSON-LD structured data (see `<script type="application/ld+json">` blocks in each page)
