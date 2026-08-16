@@ -54,3 +54,6 @@ npx serve .
 ```
 
 Then open `http://localhost:8000` in your browser.
+## 🛠️ Deployment
+
+Since this is a static site, it can be deployed as-is to any static host — Netlify, Vercel, GitHub Pages, Cloudflare Pages, or a plain VPS/Nginx setup.
