@@ -41,3 +41,16 @@ A fully static, hand-built site — no build tools, no frameworks, no backend. J
 - FAQ accordion
 - Contact form powered by [Web3Forms](https://web3forms.com/) (no backend required — submissions are emailed directly)
 - SEO basics: sitemap, robots.txt, Open Graph tags, JSON-LD structured data (see `<script type="application/ld+json">` blocks in each page)
+## 🚀 Running Locally
+
+No build step needed — it's plain HTML/CSS/JS. Just serve the folder:
+
+```bash
+# Option 1: Python
+python3 -m http.server 8000
+
+# Option 2: Node (via npx)
+npx serve .
+```
+
+Then open `http://localhost:8000` in your browser.
