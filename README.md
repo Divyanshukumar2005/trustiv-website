@@ -57,3 +57,8 @@ Then open `http://localhost:8000` in your browser.
 ## 🛠️ Deployment
 
 Since this is a static site, it can be deployed as-is to any static host — Netlify, Vercel, GitHub Pages, Cloudflare Pages, or a plain VPS/Nginx setup.
+## 📬 Contact Form
+
+The contact form (`contact.html`) uses [Web3Forms](https://web3forms.com/), a free service that emails form submissions directly — no backend or database required.
+
+> **Note:** The `access_key` in `contact.html` is a Web3Forms **site key**, meant to be used client-side (similar to how a public site ID works) — it is not a private secret. If you fork this project for your own site, replace it with your own key from [web3forms.com](https://web3forms.com/), and consider enabling domain restriction on your key from the Web3Forms dashboard to prevent misuse.
