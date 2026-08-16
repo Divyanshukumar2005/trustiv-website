@@ -62,3 +62,6 @@ Since this is a static site, it can be deployed as-is to any static host — Net
 The contact form (`contact.html`) uses [Web3Forms](https://web3forms.com/), a free service that emails form submissions directly — no backend or database required.
 
 > **Note:** The `access_key` in `contact.html` is a Web3Forms **site key**, meant to be used client-side (similar to how a public site ID works) — it is not a private secret. If you fork this project for your own site, replace it with your own key from [web3forms.com](https://web3forms.com/), and consider enabling domain restriction on your key from the Web3Forms dashboard to prevent misuse.
+## 📄 License
+
+All rights reserved © Trustiv Services. This code is provided for reference/portfolio purposes; please don't reuse the branding, copy, or client logos without permission.
