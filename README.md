@@ -31,6 +31,23 @@ A fully static, hand-built site — no build tools, no frameworks, no backend. J
     └── clients/            # Client/partner logos
 ```
 
+## 📸 Screenshots
+
+| | |
+|---|---|
+| **Home — Hero** | **Home — What We Help With** |
+| ![Home hero](docs/screenshots/01-home-hero.png) | ![What we help with](docs/screenshots/02-home-what-we-help-with.png) |
+| **Home — Testimonials** | **About — Hero** |
+| ![Testimonials](docs/screenshots/03-home-testimonials.png) | ![About hero](docs/screenshots/04-about-hero.png) |
+| **About — Who We Work With** | **Services — Hero** |
+| ![Who we work with](docs/screenshots/05-about-who-we-work-with.png) | ![Services hero](docs/screenshots/06-services-hero.png) |
+| **Services — HR Operations** | **Services — Pricing Plans** |
+| ![HR operations](docs/screenshots/07-services-hr-ops.png) | ![Pricing plans](docs/screenshots/08-services-pricing-plans.png) |
+| **Services — Positions Filled** | **Services — FAQ** |
+| ![Positions filled](docs/screenshots/09-services-positions-filled.png) | ![FAQ](docs/screenshots/10-services-faq.png) |
+| **Contact** | **Careers** |
+| ![Contact](docs/screenshots/11-contact.png) | ![Careers](docs/screenshots/12-careers.png) |
+
 ## ✨ Features
 
 - Fully responsive, mobile-first layout
@@ -41,6 +58,7 @@ A fully static, hand-built site — no build tools, no frameworks, no backend. J
 - FAQ accordion
 - Contact form powered by [Web3Forms](https://web3forms.com/) (no backend required — submissions are emailed directly)
 - SEO basics: sitemap, robots.txt, Open Graph tags, JSON-LD structured data (see `<script type="application/ld+json">` blocks in each page)
+
 ## 🚀 Running Locally
 
 No build step needed — it's plain HTML/CSS/JS. Just serve the folder:
@@ -54,14 +72,17 @@ npx serve .
 ```
 
 Then open `http://localhost:8000` in your browser.
+
 ## 🛠️ Deployment
 
 Since this is a static site, it can be deployed as-is to any static host — Netlify, Vercel, GitHub Pages, Cloudflare Pages, or a plain VPS/Nginx setup.
+
 ## 📬 Contact Form
 
 The contact form (`contact.html`) uses [Web3Forms](https://web3forms.com/), a free service that emails form submissions directly — no backend or database required.
 
 > **Note:** The `access_key` in `contact.html` is a Web3Forms **site key**, meant to be used client-side (similar to how a public site ID works) — it is not a private secret. If you fork this project for your own site, replace it with your own key from [web3forms.com](https://web3forms.com/), and consider enabling domain restriction on your key from the Web3Forms dashboard to prevent misuse.
+
 ## 📄 License
 
 All rights reserved © Trustiv Services. This code is provided for reference/portfolio purposes; please don't reuse the branding, copy, or client logos without permission.
